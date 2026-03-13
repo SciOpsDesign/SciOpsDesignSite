@@ -10,23 +10,20 @@
   <style>
     /* ── Reset & base ─────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg:        #09090f;
-      --bg2:       #11111c;
-      --bg3:       #181826;
-      --cyan:      #3fe8d8;
-      --cyan-dim:  #1fa898;
-      --purple:    #a78bfa;
-      --coral:     #ff7b6b;
-      --text:      #e8e8f0;
-      --muted:     #7878a0;
-      --border:    rgba(255,255,255,0.07);
-      --nav-h:     64px;
+      --bg: #09090f;
+      --bg2: #11111c;
+      --bg3: #181826;
+      --cyan: #3fe8d8;
+      --cyan-dim: #1fa898;
+      --purple: #a78bfa;
+      --coral: #ff7b6b;
+      --text: #e8e8f0;
+      --muted: #7878a0;
+      --border: rgba(255,255,255,0.07);
+      --nav-h: 64px;
     }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--text);
@@ -35,51 +32,31 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-
     a { color: var(--cyan); text-decoration: none; }
     a:hover { color: #fff; }
-
     img { display: block; max-width: 100%; }
 
     /* ── Nav ──────────────────────────────────────────── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: fixed; top: 0; left: 0; right: 0;
       height: var(--nav-h);
       background: rgba(9,9,15,0.88);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5%;
-      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; z-index: 100;
     }
-
     .nav-logo {
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 0.04em;
-      color: var(--cyan);
+      font-weight: 700; font-size: 1.2rem;
+      letter-spacing: 0.04em; color: var(--cyan);
     }
-
     .nav-logo span { color: var(--text); font-weight: 300; }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-      transition: color 0.2s;
+      font-size: 0.9rem; font-weight: 500; color: var(--muted);
+      letter-spacing: 0.03em; transition: color 0.2s;
     }
-
     .nav-links a:hover { color: var(--text); }
 
     /* ── Hero ─────────────────────────────────────────── */
@@ -91,133 +68,70 @@
       gap: 4rem;
       align-items: center;
     }
-
     .hero-text h1 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 0.3em;
+      font-weight: 700; line-height: 1.1; margin-bottom: 0.3em;
     }
-
     .hero-text h1 .name-accent { color: var(--cyan); }
-
     .hero-text .tagline {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(1rem, 2vw, 1.25rem);
-      color: var(--muted);
-      font-weight: 400;
-      margin-bottom: 1.8rem;
-      letter-spacing: 0.02em;
+      color: var(--muted); font-weight: 400;
+      margin-bottom: 1.8rem; letter-spacing: 0.02em;
     }
-
-    .hero-text .tagline strong {
-      color: var(--purple);
-      font-weight: 500;
-    }
-
-    .hero-text p {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 480px;
-      margin-bottom: 2rem;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
+    .hero-text .tagline strong { color: var(--purple); font-weight: 500; }
+    .hero-text p { font-size: 1rem; color: var(--muted); max-width: 480px; margin-bottom: 2rem; }
+    .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn {
-      display: inline-block;
-      padding: 0.65em 1.6em;
+      display: inline-block; padding: 0.65em 1.6em;
       border-radius: 6px;
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
+      font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em;
+      transition: all 0.2s; cursor: pointer; border: none;
     }
-
-    .btn-primary {
-      background: var(--cyan);
-      color: #09090f;
-    }
+    .btn-primary { background: var(--cyan); color: #09090f; }
     .btn-primary:hover { background: #fff; color: #09090f; }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
     .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
-
     .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      display: flex; justify-content: center; align-items: center;
     }
-
-    .hero-gif {
-      border-radius: 12px;
+    .hero-gif-main {
+      border-radius: 16px;
       border: 1px solid var(--border);
       background: var(--bg2);
       overflow: hidden;
-      box-shadow: 0 0 40px rgba(63,232,216,0.12);
+      box-shadow: 0 0 60px rgba(63,232,216,0.15);
       transition: transform 0.3s, box-shadow 0.3s;
+      max-width: 340px;
+      width: 100%;
     }
-
-    .hero-gif:hover {
+    .hero-gif-main:hover {
       transform: translateY(-4px);
-      box-shadow: 0 0 60px rgba(63,232,216,0.22);
+      box-shadow: 0 0 90px rgba(63,232,216,0.28);
     }
-
-    .hero-gif img { width: 100%; }
+    .hero-gif-main img { width: 100%; height: auto; display: block; }
     .gif-label {
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--muted);
-      padding: 8px;
-      font-family: 'Space Grotesk', sans-serif;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      text-align: center; font-size: 0.75rem; color: var(--muted);
+      padding: 8px; font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 0.06em; text-transform: uppercase;
     }
 
     /* ── Section shared ───────────────────────────────── */
-    section {
-      padding: 90px 5%;
-    }
-
+    section { padding: 90px 5%; }
     .section-label {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      margin-bottom: 0.6rem;
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 0.6rem;
     }
-
     .section-title {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 1.2rem;
-      color: var(--text);
+      font-weight: 700; line-height: 1.15; margin-bottom: 1.2rem; color: var(--text);
     }
-
-    .section-sub {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 620px;
-      margin-bottom: 3rem;
-    }
+    .section-sub { font-size: 1rem; color: var(--muted); max-width: 620px; margin-bottom: 3rem; }
 
     /* ── About ────────────────────────────────────────── */
     #about {
@@ -225,152 +139,78 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 1.1rem;
-      font-size: 1.02rem;
-    }
-
+    .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 4rem; align-items: start; }
+    .about-text p { color: var(--muted); margin-bottom: 1.1rem; font-size: 1.02rem; }
     .about-text p strong { color: var(--text); }
-
-    .about-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-
+    .about-stats { display: flex; flex-direction: column; gap: 1.2rem; }
     .stat-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.2rem 1.4rem;
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.2rem 1.4rem;
     }
-
     .stat-number {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--cyan);
-      line-height: 1;
-      margin-bottom: 0.2rem;
+      font-size: 2rem; font-weight: 700; color: var(--cyan);
+      line-height: 1; margin-bottom: 0.2rem;
     }
-
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
+    .stat-label { font-size: 0.85rem; color: var(--muted); }
 
     /* ── Portfolio ────────────────────────────────────── */
-    #portfolio {
-      background: var(--bg);
-    }
-
+    #portfolio { background: var(--bg); }
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1.5rem;
     }
-
     .portfolio-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
       transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
     }
-
     .portfolio-card:hover {
       transform: translateY(-4px);
       border-color: var(--cyan-dim);
       box-shadow: 0 8px 40px rgba(63,232,216,0.1);
     }
-
-    .portfolio-card.featured {
-      grid-column: 1 / -1;
-    }
-
+    .portfolio-card.featured { grid-column: 1 / -1; }
     .card-img {
-      width: 100%;
-      background: var(--bg3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      width: 100%; background: var(--bg3);
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
     }
-
-    .card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 1rem;
-    }
-
-    .card-img.tall { height: 380px; }
-    .card-img.medium { height: 260px; }
-    .card-img.short { height: 200px; }
-
-    .card-img.placeholder {
-      height: 220px;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .card-img.placeholder .placeholder-icon {
-      font-size: 2.5rem;
-      opacity: 0.3;
-    }
-
-    .card-img.placeholder span {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .card-body {
-      padding: 1.2rem 1.4rem 1.4rem;
-    }
-
+    .card-img img { width: 100%; height: 100%; object-fit: contain; padding: 1rem; }
+    .card-img.tall    { height: 420px; }
+    .card-img.medium  { height: 260px; }
+    .card-img.short   { height: 200px; }
+    .card-body { padding: 1.2rem 1.4rem 1.4rem; }
     .card-tag {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.25em 0.7em;
-      border-radius: 4px;
-      margin-bottom: 0.7rem;
+      display: inline-block; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.25em 0.7em; border-radius: 4px; margin-bottom: 0.7rem;
     }
-
-    .tag-cyan    { background: rgba(63,232,216,0.12); color: var(--cyan); }
-    .tag-purple  { background: rgba(167,139,250,0.12); color: var(--purple); }
-    .tag-coral   { background: rgba(255,123,107,0.12); color: var(--coral); }
-
+    .tag-cyan   { background: rgba(63,232,216,0.12);  color: var(--cyan); }
+    .tag-purple { background: rgba(167,139,250,0.12); color: var(--purple); }
+    .tag-coral  { background: rgba(255,123,107,0.12); color: var(--coral); }
     .card-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.4rem;
+      font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem;
     }
+    .card-desc  { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+    .card-source { font-size: 0.78rem; color: var(--cyan-dim); margin-top: 0.7rem; font-style: italic; }
 
-    .card-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.6;
+    /* ── Portfolio section dividers ───────────────────── */
+    .portfolio-section-header {
+      grid-column: 1 / -1;
+      padding: 2rem 0 0.6rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.5rem;
     }
-
-    .card-source {
-      font-size: 0.78rem;
-      color: var(--cyan-dim);
-      margin-top: 0.7rem;
-      font-style: italic;
+    .portfolio-section-header .psh-tag {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 0.3rem;
+    }
+    .portfolio-section-header h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem; font-weight: 600; color: var(--text);
     }
 
     /* ── Publications ─────────────────────────────────── */
@@ -379,155 +219,70 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-
-    .pub-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-
+    .pub-list { display: flex; flex-direction: column; gap: 1.1rem; }
     .pub-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.2rem 1.5rem;
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.2rem 1.5rem;
       transition: border-color 0.2s;
     }
-
     .pub-card:hover { border-color: var(--cyan-dim); }
-
     .pub-card.first-author { border-left: 3px solid var(--cyan); }
-
     .pub-year {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      margin-bottom: 0.3rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--cyan); margin-bottom: 0.3rem;
+      display: flex; align-items: center; gap: 0.5rem;
     }
-
     .first-author-badge {
-      background: rgba(63,232,216,0.12);
-      color: var(--cyan);
-      font-size: 0.68rem;
-      padding: 0.15em 0.5em;
-      border-radius: 3px;
-      letter-spacing: 0.08em;
+      background: rgba(63,232,216,0.12); color: var(--cyan);
+      font-size: 0.68rem; padding: 0.15em 0.5em;
+      border-radius: 3px; letter-spacing: 0.08em;
     }
-
     .pub-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.98rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.3rem;
-      line-height: 1.4;
+      font-size: 0.98rem; font-weight: 600; color: var(--text);
+      margin-bottom: 0.3rem; line-height: 1.4;
     }
-
-    .pub-authors {
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-
+    .pub-authors { font-size: 0.84rem; color: var(--muted); margin-bottom: 0.2rem; }
     .pub-authors strong { color: var(--text); }
-
-    .pub-journal {
-      font-size: 0.82rem;
-      color: var(--cyan-dim);
-      font-style: italic;
-    }
+    .pub-journal { font-size: 0.82rem; color: var(--cyan-dim); font-style: italic; }
 
     /* ── Contact ──────────────────────────────────────── */
-    #contact {
-      background: var(--bg);
-      text-align: center;
-    }
-
-    #contact .section-sub {
-      margin: 0 auto 2.5rem;
-    }
-
+    #contact { background: var(--bg); text-align: center; }
+    #contact .section-sub { margin: 0 auto 2.5rem; }
     .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
+      display: flex; justify-content: center;
+      gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem;
     }
-
     .contact-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.7em 1.5em;
-      border-radius: 8px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 0.03em;
-      border: 1px solid var(--border);
-      color: var(--text);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.7em 1.5em; border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+      font-size: 0.9rem; letter-spacing: 0.03em;
+      border: 1px solid var(--border); color: var(--text);
       transition: all 0.2s;
     }
-
-    .contact-btn:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
-    }
-
-    .contact-btn svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
+    .contact-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+    .contact-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
 
     /* ── Footer ───────────────────────────────────────── */
     footer {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
+      background: var(--bg2); border-top: 1px solid var(--border);
       padding: 1.8rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.82rem;
-      color: var(--muted);
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.82rem; color: var(--muted); flex-wrap: wrap; gap: 0.5rem;
     }
-
     footer a { color: var(--muted); }
     footer a:hover { color: var(--cyan); }
 
-    /* ── Divider line ─────────────────────────────────── */
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--cyan-dim), transparent);
-      margin: 0 5%;
-      opacity: 0.3;
-    }
-
     /* ── Responsive ───────────────────────────────────── */
     @media (max-width: 860px) {
-      #hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+      #hero { grid-template-columns: 1fr; text-align: center; }
       .hero-text p { margin: 0 auto 2rem; }
       .cta-row { justify-content: center; }
       .hero-visual { order: -1; }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .about-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
-
     @media (max-width: 540px) {
       .portfolio-card.featured { grid-column: 1; }
     }
@@ -535,336 +290,681 @@
 </head>
 <body>
 
-  <!-- ── NAV ─────────────────────────────────────────── -->
-  <nav>
-    <div class="nav-logo">SciOps<span>Design</span></div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- ── NAV ─────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">SciOps<span>Design</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- ── HERO ────────────────────────────────────────── -->
-  <section id="hero">
-    <div class="hero-text">
-      <h1>
-        <span class="name-accent">Sara N. Bramlett</span><br>Ph.D.
-      </h1>
-      <p class="tagline">
-        Neuroscientist &nbsp;·&nbsp; <strong>Scientific Illustrator</strong> &nbsp;·&nbsp; Science Communicator
+<!-- ── HERO ────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-text">
+    <h1>
+      <span class="name-accent">Sara N. Bramlett</span><br>Ph.D.
+    </h1>
+    <p class="tagline">
+      Neuroscientist &nbsp;·&nbsp; <strong>Scientific Illustrator</strong> &nbsp;·&nbsp; Science Communicator
+    </p>
+    <p>
+      I study how the brain learns, adapts, and becomes addicted. And then I draw it.
+      My work sits at the intersection of rigorous research and visual storytelling,
+      translating complex neuroscience into images and ideas that anyone can engage with.
+    </p>
+    <div class="cta-row">
+      <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-gif-main">
+      <img src="DollyBalloons.gif" alt="DollyBalloons animation" />
+      <div class="gif-label">DollyBalloons</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ───────────────────────────────────────── -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Science, Art,<br>and Everything Between</h2>
+      <p>
+        I'm a neuropharmacologist who recently defended my Ph.D. at <strong>Emory University</strong>,
+        where I spent nearly a decade investigating how a protein called RGS14 shapes the brain's
+        response to cocaine, and how early-life stress quietly rewires the stress response in
+        nonhuman primates.
       </p>
       <p>
-        I study how the brain learns, adapts, and becomes addicted. And then I draw it.
-        My work sits at the intersection of rigorous research and visual storytelling,
-        translating complex neuroscience into images and ideas that anyone can engage with.
+        Along the way I discovered that I love making figures as much as I love the science behind
+        them. Every diagram, circuit map, and data panel in my publications was designed from scratch,
+        because I believe <strong>how you show science matters as much as what you show.</strong>
       </p>
-      <div class="cta-row">
-        <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
-        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      <p>
+        SciOpsDesign is the home for all of it: peer-reviewed research, scientific illustration,
+        science communication, and the occasional creative detour. I'm available for freelance
+        illustration and sci-comm work. <a href="#contact">Let's talk</a>.
+      </p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Peer-reviewed publications (2 first-author)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Years of research experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Journals featuring original figure design</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">Ph.D.</div>
+        <div class="stat-label">Molecular &amp; Systems Pharmacology, Emory University 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PORTFOLIO ───────────────────────────────────── -->
+<section id="portfolio">
+  <div class="section-label">Portfolio</div>
+  <h2 class="section-title">Scientific Illustration</h2>
+  <p class="section-sub">
+    Every figure below was created from scratch for peer-reviewed publication or original research.
+    No templates, no stock art — just original visual science.
+  </p>
+
+  <div class="portfolio-grid">
+
+    <!-- ─ FEATURED ──────────────────────────────────── -->
+    <div class="portfolio-card featured">
+      <div class="card-img tall" style="background:#0d0d1a;">
+        <img src="portfolio/circuit-model-sfo.png"
+             alt="RGS14 expression circuit map in adult mouse brain"
+             style="max-height:420px; object-fit:contain; padding:1.5rem;" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Featured · Neuroanatomy</span>
+        <div class="card-title">RGS14 Expression Circuit Map — Adult Mouse Brain</div>
+        <div class="card-desc">
+          A comprehensive, color-coded neural circuit diagram mapping RGS14 protein expression
+          across functionally distinct brain regions: reward, memory, emotion, action, and
+          motivation. Each circuit domain is distinguished by color and overlapping anatomical
+          relationships are shown through layered transparency. Designed to convey a brain-wide
+          story in a single figure.
+        </div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
       </div>
     </div>
 
-    <div class="hero-visual">
-      <div>
-        <div class="hero-gif" style="width:170px;">
-          <img src="Na_F.gif" alt="Sodium ion animation" width="170" height="171" />
-          <div class="gif-label">Na⁺ (Female)</div>
-        </div>
+    <!-- ─ EJN 2024 ───────────────────────────────────── -->
+    <div class="portfolio-section-header">
+      <div class="psh-tag">Bramlett et al. 2024 · European Journal of Neuroscience</div>
+      <h3>RGS14 Protein Expression Profile in the Adult Mouse Brain</h3>
+    </div>
+
+    <div class="portfolio-card featured">
+      <div class="card-img tall" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-fig1.png" alt="Whole-brain atlas of RGS14 immunoreactivity — anterior" />
       </div>
-      <div>
-        <div class="hero-gif" style="width:220px;">
-          <img src="R14.gif" alt="RGS14 animation" width="311" height="341" style="width:100%;height:auto;" />
-          <div class="gif-label">RGS14</div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Neuroanatomy · Immunohistochemistry</span>
+        <div class="card-title">Whole-Brain RGS14 Atlas — Anterior Sections</div>
+        <div class="card-desc">
+          High-resolution whole-brain coronal atlas mapping RGS14 immunoreactivity across anterior
+          brain regions. Each panel is annotated with region labels and scalebars, capturing
+          expression at the level of cortex, striatum, septum, and hippocampus.
         </div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
       </div>
     </div>
-  </section>
 
-  <!-- ── ABOUT ───────────────────────────────────────── -->
-  <section id="about">
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="section-label">About</div>
-        <h2 class="section-title">Science, Art,<br>and Everything Between</h2>
-        <p>
-          I'm a neuropharmacologist who recently defended my Ph.D. at <strong>Emory University</strong>,
-          where I spent nearly a decade investigating how a protein called RGS14 shapes the brain's
-          response to cocaine, and how early-life stress quietly rewires the stress response in
-          nonhuman primates.
-        </p>
-        <p>
-          Along the way I discovered that I love making figures as much as I love the science behind them.
-          Every diagram, circuit map, and data panel in my publications was designed from scratch,
-          because I believe <strong>how you show science matters as much as what you show.</strong>
-        </p>
-        <p>
-          SciOpsDesign is the home for all of it: peer-reviewed research, scientific illustration,
-          science communication, and the occasional creative detour. I'm available for freelance
-          illustration and sci-comm work. <a href="#contact">Let's talk</a>.
-        </p>
+    <div class="portfolio-card featured">
+      <div class="card-img tall" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-fig2.png" alt="Whole-brain atlas of RGS14 immunoreactivity — posterior" />
       </div>
-
-      <div class="about-stats">
-        <div class="stat-card">
-          <div class="stat-number">7</div>
-          <div class="stat-label">Peer-reviewed publications (2 first-author)</div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Neuroanatomy · Immunohistochemistry</span>
+        <div class="card-title">Whole-Brain RGS14 Atlas — Posterior Sections</div>
+        <div class="card-desc">
+          Continuation of the coronal atlas through posterior brain regions including
+          amygdala, thalamus, hypothalamus, brainstem, and cerebellum. Together with Fig. 1,
+          these panels form the most comprehensive map of RGS14 expression published to date.
         </div>
-        <div class="stat-card">
-          <div class="stat-number">10+</div>
-          <div class="stat-label">Years of research experience</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">4</div>
-          <div class="stat-label">Journals featuring original figure design</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">Ph.D.</div>
-          <div class="stat-label">Molecular & Systems Pharmacology, Emory University 2024</div>
-        </div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
       </div>
     </div>
-  </section>
 
-  <!-- ── PORTFOLIO ───────────────────────────────────── -->
-  <section id="portfolio">
-    <div class="section-label">Portfolio</div>
-    <h2 class="section-title">Scientific Illustration</h2>
-    <p class="section-sub">
-      Every figure below was created from scratch for peer-reviewed publication.
-      No templates, no stock art, just original visual science.
-    </p>
-
-    <div class="portfolio-grid">
-
-      <!-- Featured: Circuit map -->
-      <div class="portfolio-card featured">
-        <div class="card-img tall" style="background: #0d0d1a;">
-          <img src="AnatomyPaper_CircuitModel_SFO.png"
-               alt="RGS14 expression circuit map in adult mouse brain"
-               style="max-height: 400px; object-fit: contain; padding: 1.5rem;" />
-        </div>
-        <div class="card-body">
-          <span class="card-tag tag-cyan">Featured · Neuroanatomy</span>
-          <div class="card-title">RGS14 Expression Circuit Map — Adult Mouse Brain</div>
-          <div class="card-desc">
-            A comprehensive, color-coded neural circuit diagram mapping RGS14 protein expression
-            across functionally distinct brain regions: reward, memory, emotion, action, and motivation.
-            Each circuit domain is distinguished by color and overlapping anatomical relationships
-            are shown through layered transparency. Designed to convey a brain-wide story in a single figure.
-          </div>
-          <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
-        </div>
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-fig3.png" alt="EJN Figure 3" />
       </div>
-
-      <!-- Animated figures -->
-      <div class="portfolio-card">
-        <div class="card-img medium" style="background: #0d0d1a;">
-          <img src="R14.gif" alt="RGS14 molecular animation"
-               style="max-height: 220px; object-fit: contain;" />
-        </div>
-        <div class="card-body">
-          <span class="card-tag tag-purple">Animation · Molecular Biology</span>
-          <div class="card-title">RGS14 Protein — Animated</div>
-          <div class="card-desc">
-            Animated illustration of RGS14, a multidomain signaling scaffold that
-            suppresses synaptic plasticity in the hippocampus and limbic system.
-          </div>
-        </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Immunohistochemistry</span>
+        <div class="card-title">RGS14 Expression — Cortex &amp; Hippocampus</div>
+        <div class="card-desc">Detailed immunofluorescence panels showing RGS14 distribution in cortical layers and hippocampal subfields, with high-magnification insets.</div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
       </div>
-
-      <div class="portfolio-card">
-        <div class="card-img medium" style="background: #0d0d1a;">
-          <img src="Na_F.gif" alt="Sodium ion animation"
-               style="max-height: 220px; object-fit: contain;" />
-        </div>
-        <div class="card-body">
-          <span class="card-tag tag-coral">Animation · Neurophysiology</span>
-          <div class="card-title">Sodium Ion (Na⁺) — Animated</div>
-          <div class="card-desc">
-            Animated depiction of a sodium ion, a key player in action potential
-            propagation and neural signaling. Part of a broader series of
-            neurophysiology illustrations.
-          </div>
-        </div>
-      </div>
-
-      <!-- Paper figure sets -->
-      <div class="portfolio-card">
-        <div class="card-img placeholder">
-          <div class="placeholder-icon">🧠</div>
-          <span>Figures available upon request</span>
-        </div>
-        <div class="card-body">
-          <span class="card-tag tag-cyan">Behavioral Pharmacology</span>
-          <div class="card-title">Cocaine Behavioral Study Figures</div>
-          <div class="card-desc">
-            Full figure set for a female-specific cocaine behavioral study: experimental
-            schematics, locomotor sensitization curves, conditioned place preference data,
-            and immunofluorescence panels showing RGS14 in nucleus accumbens.
-          </div>
-          <div class="card-source">Bramlett et al. (2025) · Addiction Neuroscience</div>
-        </div>
-      </div>
-
-      <div class="portfolio-card">
-        <div class="card-img placeholder">
-          <div class="placeholder-icon">🔬</div>
-          <span>Figures available upon request</span>
-        </div>
-        <div class="card-body">
-          <span class="card-tag tag-purple">Molecular Neuroscience</span>
-          <div class="card-title">RGS14 Spine Plasticity Figures</div>
-          <div class="card-desc">
-            Figures for a review of RGS14's role in post-synaptic signaling and
-            dendritic spine structural plasticity, including protein interaction
-            diagrams and signaling pathway schematics.
-          </div>
-          <div class="card-source">Harbin, Bramlett et al. (2021) · Int. Journal of Molecular Sciences</div>
-        </div>
-      </div>
-
-      <div class="portfolio-card">
-        <div class="card-img placeholder">
-          <div class="placeholder-icon">📍</div>
-          <span>Figures available upon request</span>
-        </div>
-        <div class="card-body">
-          <span class="card-tag tag-coral">Neuroanatomy · Review</span>
-          <div class="card-title">Limbic System & Basal Ganglia Figures</div>
-          <div class="card-desc">
-            Anatomical and circuit diagrams for a comprehensive review of RGS14
-            expression in CA2 hippocampus, amygdala, and basal ganglia — with
-            implications for human disease.
-          </div>
-          <div class="card-source">Montanez-Miranda, Bramlett & Hepler (2023) · Hippocampus</div>
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <!-- ── PUBLICATIONS ────────────────────────────────── -->
-  <section id="publications">
-    <div class="section-label">Research</div>
-    <h2 class="section-title">Publications</h2>
-    <p class="section-sub">
-      Seven peer-reviewed papers spanning behavioral pharmacology, molecular neuroscience, and neuroanatomy.
-    </p>
-
-    <div class="pub-list">
-
-      <div class="pub-card first-author">
-        <div class="pub-year">
-          2025
-          <span class="first-author-badge">First Author</span>
-        </div>
-        <div class="pub-title">Endogenous RGS14 blunts cocaine-induced emotionally motivated behaviors in female mice</div>
-        <div class="pub-authors"><strong>Bramlett, S. N.</strong>, Foster, S. L., Weinshenker, D., &amp; Hepler, J. R.</div>
-        <div class="pub-journal">Addiction Neuroscience, 15, 100203</div>
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-fig4.png" alt="EJN Figure 4" />
       </div>
-
-      <div class="pub-card first-author">
-        <div class="pub-year">
-          2024
-          <span class="first-author-badge">First Author</span>
-        </div>
-        <div class="pub-title">RGS14 protein expression profile in the adult mouse brain</div>
-        <div class="pub-authors"><strong>Bramlett, S. N.</strong>, Fitzmaurice, S. M., Harbin, N. H., Yan, W., Bandlamudi, C., Van Doorn, G. E., Smith, Y., &amp; Hepler, J. R.</div>
-        <div class="pub-journal">European Journal of Neuroscience · DOI: 10.1111/ejn.16592</div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Immunohistochemistry</span>
+        <div class="card-title">RGS14 Expression — Striatum &amp; Basal Ganglia</div>
+        <div class="card-desc">Immunofluorescence panels mapping RGS14 across the striatum, nucleus accumbens, and associated basal ganglia structures.</div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
       </div>
-
-      <div class="pub-card">
-        <div class="pub-year">2023</div>
-        <div class="pub-title">RGS14 expression in CA2 hippocampus, amygdala, and basal ganglia: implications for human brain physiology and disease</div>
-        <div class="pub-authors">Montanez-Miranda, C., <strong>Bramlett, S. N.</strong>, &amp; Hepler, J. R.</div>
-        <div class="pub-journal">Hippocampus · DOI: 10.1002/hipo.23492</div>
-      </div>
-
-      <div class="pub-card">
-        <div class="pub-year">2021</div>
-        <div class="pub-title">RGS14 modulates locomotor behavior and ERK signaling induced by environmental novelty and cocaine within discrete limbic structures</div>
-        <div class="pub-authors">Foster, S. L., Lustberg, D. J., Harbin, N. H., <strong>Bramlett, S. N.</strong>, Hepler, J. R., &amp; Weinshenker, D.</div>
-        <div class="pub-journal">Psychopharmacology, 238(10), 2755–2773</div>
-      </div>
-
-      <div class="pub-card">
-        <div class="pub-year">2021</div>
-        <div class="pub-title">RGS14 regulation of post-synaptic signaling and spine plasticity in brain</div>
-        <div class="pub-authors">Harbin, N. H., <strong>Bramlett, S. N.</strong>, Montanez-Miranda, C., Terzioglu, G., &amp; Hepler, J. R.</div>
-        <div class="pub-journal">International Journal of Molecular Sciences, 22(13), 6823</div>
-      </div>
-
-      <div class="pub-card">
-        <div class="pub-year">2019</div>
-        <div class="pub-title">Effects of early life stress on cocaine self-administration in post-pubertal male and female rhesus macaques</div>
-        <div class="pub-authors">Wakeford, A. G. P., Morin, E. L., <strong>Bramlett, S. N.</strong>, Howell, B. R., McCormack, K. M., Meyer, J. S., Nader, M. A., Sanchez, M. M., &amp; Howell, L. L.</div>
-        <div class="pub-journal">Psychopharmacology, 236, 2785–2796</div>
-      </div>
-
-      <div class="pub-card">
-        <div class="pub-year">2018</div>
-        <div class="pub-title">A review of nonhuman primate models of early life stress and adolescent drug abuse</div>
-        <div class="pub-authors">Wakeford, A. G. P., Morin, E. L., <strong>Bramlett, S. N.</strong>, Howell, L. L., &amp; Sanchez, M. M.</div>
-        <div class="pub-journal">Neurobiology of Stress, 9, 188–198</div>
-      </div>
-
     </div>
-  </section>
 
-  <!-- ── CONTACT ──────────────────────────────────────── -->
-  <section id="contact">
-    <div class="section-label">Contact</div>
-    <h2 class="section-title">Let's Work Together</h2>
-    <p class="section-sub">
-      Available for freelance scientific illustration, science communication,
-      and AI training projects. Also happy to connect about research or just say hello.
-    </p>
-
-    <div class="contact-links">
-      <a href="mailto:sara.n.bramlett@gmail.com" class="contact-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-          <polyline points="22,6 12,13 2,6"/>
-        </svg>
-        Email
-      </a>
-      <a href="https://www.linkedin.com/in/sara-bramlett-38028b146/" target="_blank" class="contact-btn">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
-          <circle cx="4" cy="4" r="2"/>
-        </svg>
-        LinkedIn
-      </a>
-      <a href="https://www.etsy.com/shop/sciopsdesign" target="_blank" class="contact-btn">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M10 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
-        </svg>
-        Etsy Shop
-      </a>
-      <a href="https://www.instagram.com/sciopsdesign/" target="_blank" class="contact-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-          <circle cx="12" cy="12" r="4"/>
-          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-        </svg>
-        Instagram
-      </a>
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-fig5.png" alt="EJN Figure 5" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Immunohistochemistry</span>
+        <div class="card-title">RGS14 Expression — Amygdala &amp; Extended Amygdala</div>
+        <div class="card-desc">High-resolution panels through the amygdalar complex, bed nucleus of the stria terminalis, and related limbic structures.</div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
+      </div>
     </div>
-  </section>
 
-  <!-- ── FOOTER ───────────────────────────────────────── -->
-  <footer>
-    <span>© 2025 Sara N. Bramlett, Ph.D. — SciOpsDesign</span>
-    <span>
-      <a href="https://www.etsy.com/shop/sciopsdesign" target="_blank">Etsy</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.instagram.com/sciopsdesign/" target="_blank">Instagram</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.linkedin.com/in/sara-bramlett-38028b146/" target="_blank">LinkedIn</a>
-    </span>
-  </footer>
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-fig6.png" alt="EJN Figure 6" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Immunohistochemistry</span>
+        <div class="card-title">RGS14 Expression — Thalamus &amp; Hypothalamus</div>
+        <div class="card-desc">Immunofluorescence panels documenting RGS14 in diencephalic structures, with focus on thalamic nuclei and hypothalamic areas.</div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-fig7.png" alt="EJN Figure 7" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Immunohistochemistry</span>
+        <div class="card-title">RGS14 Expression — Midbrain &amp; Brainstem</div>
+        <div class="card-desc">Panels through ventral midbrain (VTA, SNc) and brainstem regions, showing RGS14 colocalization with dopaminergic and other cell markers.</div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-fig8.png" alt="EJN Figure 8" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Immunohistochemistry</span>
+        <div class="card-title">RGS14 Cellular Co-localization Panels</div>
+        <div class="card-desc">Confocal panels showing RGS14 protein co-localization with neuronal subtype markers across multiple brain regions.</div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-fig9.png" alt="EJN Figure 9" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Neuroanatomy</span>
+        <div class="card-title">RGS14 Subcellular Localization</div>
+        <div class="card-desc">High-magnification panels examining RGS14 at the subcellular level, including dendritic and spine compartments.</div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-fig10.png" alt="EJN Figure 10" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Data Visualization</span>
+        <div class="card-title">Quantitative Expression Summary</div>
+        <div class="card-desc">Summary figure quantifying RGS14 immunoreactive cell density and optical density across brain regions, compiled from the full atlas dataset.</div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img short" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-table1.png" alt="EJN Table 1" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Data Table</span>
+        <div class="card-title">Regional Expression Summary — Table 1</div>
+        <div class="card-desc">Formatted data table listing RGS14 expression levels across all brain regions surveyed, with anatomical abbreviations and scoring key.</div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img short" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-table2.png" alt="EJN Table 2" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Data Table</span>
+        <div class="card-title">Regional Expression Summary — Table 2</div>
+        <div class="card-desc">Continuation of the regional expression survey, covering subcortical and hindbrain structures.</div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img short" style="background:#0d0d1a;">
+        <img src="portfolio/ejn-table3.png" alt="EJN Table 3" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Data Table</span>
+        <div class="card-title">Antibody &amp; Methods Reference — Table 3</div>
+        <div class="card-desc">Methods summary table detailing primary antibodies, dilutions, and imaging parameters used throughout the study.</div>
+        <div class="card-source">Bramlett et al. (2024) · European Journal of Neuroscience</div>
+      </div>
+    </div>
+
+    <!-- ─ ADDICTION NEUROSCIENCE 2025 ───────────────── -->
+    <div class="portfolio-section-header">
+      <div class="psh-tag">Bramlett et al. 2025 · Addiction Neuroscience</div>
+      <h3>Endogenous RGS14 Blunts Cocaine-Induced Emotionally Motivated Behaviors in Female Mice</h3>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/addicneuro-fig1.png" alt="Addiction Neuroscience Figure 1" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-purple">Behavioral Pharmacology</span>
+        <div class="card-title">Experimental Design &amp; Timeline</div>
+        <div class="card-desc">Schematic depicting the full experimental design for cocaine behavioral testing, including genotype comparisons, treatment groups, and timeline of behavioral assessments in female mice.</div>
+        <div class="card-source">Bramlett et al. (2025) · Addiction Neuroscience</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/addicneuro-fig2.png" alt="Addiction Neuroscience Figure 2" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-purple">Behavioral Pharmacology</span>
+        <div class="card-title">Locomotor Sensitization Data</div>
+        <div class="card-desc">Locomotor activity curves comparing RGS14 knockout and wild-type female mice over repeated cocaine exposures, showing blunted sensitization in the presence of endogenous RGS14.</div>
+        <div class="card-source">Bramlett et al. (2025) · Addiction Neuroscience</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/addicneuro-fig3.png" alt="Addiction Neuroscience Figure 3" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-purple">Behavioral Pharmacology</span>
+        <div class="card-title">Conditioned Place Preference</div>
+        <div class="card-desc">Conditioned place preference data showing cocaine reward behavior across genotypes, with individual data points and statistical comparisons.</div>
+        <div class="card-source">Bramlett et al. (2025) · Addiction Neuroscience</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/addicneuro-fig4.png" alt="Addiction Neuroscience Figure 4" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-purple">Immunofluorescence</span>
+        <div class="card-title">RGS14 Immunofluorescence — Nucleus Accumbens</div>
+        <div class="card-desc">Immunofluorescence panels confirming RGS14 expression in the nucleus accumbens of female mice, with quantification of protein levels across treatment groups.</div>
+        <div class="card-source">Bramlett et al. (2025) · Addiction Neuroscience</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/addicneuro-fig5.png" alt="Addiction Neuroscience Figure 5" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-purple">Behavioral Pharmacology</span>
+        <div class="card-title">Anxiety &amp; Emotionality Measures</div>
+        <div class="card-desc">Behavioral measures of anxiety-like and emotionally motivated behaviors following cocaine exposure, highlighting sex-specific effects of RGS14 deletion.</div>
+        <div class="card-source">Bramlett et al. (2025) · Addiction Neuroscience</div>
+      </div>
+    </div>
+
+    <!-- ─ HARBIN / IJMS 2021 ──────────────────────────── -->
+    <div class="portfolio-section-header">
+      <div class="psh-tag">Harbin, Bramlett et al. 2021 · International Journal of Molecular Sciences</div>
+      <h3>RGS14 Regulation of Post-Synaptic Signaling and Spine Plasticity in Brain</h3>
+    </div>
+
+    <div class="portfolio-card featured">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/harbin-graphical-abstract.png" alt="IJMS Graphical Abstract"
+             style="max-height:240px; object-fit:contain; padding:1rem;" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-coral">Graphical Abstract · Molecular Neuroscience</span>
+        <div class="card-title">Graphical Abstract: RGS14 in Synaptic Plasticity</div>
+        <div class="card-desc">
+          Overview illustration summarizing RGS14's role as a molecular brake on synaptic plasticity.
+          The graphical abstract condenses the key concepts of the review — protein interactions,
+          signaling context, and physiological outcomes — into a single accessible visual.
+        </div>
+        <div class="card-source">Harbin, Bramlett et al. (2021) · Int. Journal of Molecular Sciences</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/harbin-fig2.png" alt="IJMS Figure 2" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-coral">Molecular Neuroscience</span>
+        <div class="card-title">RGS14 Domain Architecture &amp; Interactions</div>
+        <div class="card-desc">Illustration of RGS14's multi-domain structure and its known protein interaction partners involved in G-protein signaling and MAPK cascades.</div>
+        <div class="card-source">Harbin, Bramlett et al. (2021) · Int. Journal of Molecular Sciences</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/harbin-signaling-model.jpeg" alt="IJMS Signaling Model" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-coral">Molecular Neuroscience</span>
+        <div class="card-title">RGS14 Signaling Pathway Model</div>
+        <div class="card-desc">Full signaling pathway diagram showing how RGS14 integrates G-protein and MAPK signaling cascades at the post-synapse to regulate plasticity.</div>
+        <div class="card-source">Harbin, Bramlett et al. (2021) · Int. Journal of Molecular Sciences</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/harbin-gprotein-subfig.jpeg" alt="G-protein signaling sub-figure" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-coral">Molecular Neuroscience</span>
+        <div class="card-title">G-Protein Signaling Sub-Figure</div>
+        <div class="card-desc">Detailed panel illustrating RGS14's interaction with active G-protein alpha subunits and the downstream consequences for second messenger signaling.</div>
+        <div class="card-source">Harbin, Bramlett et al. (2021) · Int. Journal of Molecular Sciences</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/harbin-structural-subfig.jpeg" alt="Structural biology sub-figure" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-coral">Structural Biology</span>
+        <div class="card-title">RGS14 Structural Sub-Figure</div>
+        <div class="card-desc">Sub-figure illustrating RGS14's structural domains and their spatial relationship, providing context for understanding its multi-functional scaffold activity.</div>
+        <div class="card-source">Harbin, Bramlett et al. (2021) · Int. Journal of Molecular Sciences</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/harbin-eltp-subfig.jpeg" alt="Early LTP sub-figure" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-coral">Synaptic Plasticity</span>
+        <div class="card-title">Early LTP Sub-Figure</div>
+        <div class="card-desc">Diagram illustrating RGS14's role during early long-term potentiation (eLTP), including its regulation of spine structural changes and AMPAR trafficking.</div>
+        <div class="card-source">Harbin, Bramlett et al. (2021) · Int. Journal of Molecular Sciences</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/harbin-lltp-subfig.jpeg" alt="Late LTP sub-figure" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-coral">Synaptic Plasticity</span>
+        <div class="card-title">Late LTP Sub-Figure</div>
+        <div class="card-desc">Diagram depicting RGS14's influence during late LTP, focusing on transcription-dependent plasticity mechanisms and sustained synaptic strengthening.</div>
+        <div class="card-source">Harbin, Bramlett et al. (2021) · Int. Journal of Molecular Sciences</div>
+      </div>
+    </div>
+
+    <!-- ─ DISSERTATION FIGURES ───────────────────────── -->
+    <div class="portfolio-section-header">
+      <div class="psh-tag">Doctoral Dissertation · Emory University 2024</div>
+      <h3>Original Figures from Dissertation Research</h3>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/diss-synapse-model.png" alt="Synapse model diagram" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Molecular Neuroscience · Illustration</span>
+        <div class="card-title">Synapse Signaling Model</div>
+        <div class="card-desc">Original illustration of a glutamatergic synapse depicting RGS14's position within the post-synaptic density and its interactions with key signaling proteins.</div>
+        <div class="card-source">Bramlett, Doctoral Dissertation (2024) · Emory University</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/diss-r14-d1d2-msn.png" alt="RGS14 in D1/D2 medium spiny neurons" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Neuroanatomy · Illustration</span>
+        <div class="card-title">RGS14 in D1 &amp; D2 Medium Spiny Neurons</div>
+        <div class="card-desc">Schematic illustrating RGS14 expression in the two main classes of striatal medium spiny neurons (D1- and D2-expressing), with implications for dopamine signaling and reward circuitry.</div>
+        <div class="card-source">Bramlett, Doctoral Dissertation (2024) · Emory University</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="portfolio/diss-d1d2-ihc.png" alt="D1/D2 immunohistochemistry" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-cyan">Immunohistochemistry</span>
+        <div class="card-title">D1/D2 Receptor Immunohistochemistry</div>
+        <div class="card-desc">Immunofluorescence panels showing the distribution of D1 and D2 dopamine receptors in striatal subregions, used to characterize the cellular context of RGS14 expression.</div>
+        <div class="card-source">Bramlett, Doctoral Dissertation (2024) · Emory University</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img tall" style="background:#0d0d1a;">
+        <img src="portfolio/diss-nac-erk.png" alt="ERK signaling in nucleus accumbens" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-purple">Immunofluorescence · ERK Signaling</span>
+        <div class="card-title">ERK Activation — Nucleus Accumbens</div>
+        <div class="card-desc">
+          Whole-section immunofluorescence map of phospho-ERK1/2 activation across the nucleus accumbens following cocaine exposure.
+          High-resolution tiled image allowing regional and cellular-level examination of MAPK signaling patterns.
+        </div>
+        <div class="card-source">Bramlett, Doctoral Dissertation (2024) · Emory University</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img tall" style="background:#0d0d1a;">
+        <img src="portfolio/diss-amygdala-erk.png" alt="ERK signaling in amygdala" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-purple">Immunofluorescence · ERK Signaling</span>
+        <div class="card-title">ERK Activation — Amygdala</div>
+        <div class="card-desc">
+          Whole-section immunofluorescence map of phospho-ERK1/2 in the amygdaloid complex after cocaine treatment.
+          Fine cellular detail preserved across the full extent of the structure, with subregion annotations.
+        </div>
+        <div class="card-source">Bramlett, Doctoral Dissertation (2024) · Emory University</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img tall" style="background:#0d0d1a;">
+        <img src="portfolio/diss-bnst-erk.png" alt="ERK signaling in BNST" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-purple">Immunofluorescence · ERK Signaling</span>
+        <div class="card-title">ERK Activation — Bed Nucleus of the Stria Terminalis</div>
+        <div class="card-desc">
+          Whole-section immunofluorescence of phospho-ERK1/2 in the BNST, a limbic structure central to stress and drug-related behavior.
+          Enables zoom-level inspection of circuit-specific activation patterns.
+        </div>
+        <div class="card-source">Bramlett, Doctoral Dissertation (2024) · Emory University</div>
+      </div>
+    </div>
+
+    <!-- ─ PIXEL ART & ANIMATIONS ─────────────────────── -->
+    <div class="portfolio-section-header">
+      <div class="psh-tag">Pixel Art &amp; Animations</div>
+      <h3>Original Digital Animations</h3>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="R14.gif" alt="RGS14 molecular animation" style="max-height:220px; object-fit:contain;" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-purple">Animation · Molecular Biology</span>
+        <div class="card-title">RGS14 Protein — Animated</div>
+        <div class="card-desc">Animated illustration of RGS14, a multidomain signaling scaffold that suppresses synaptic plasticity in the hippocampus and limbic system.</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="card-img medium" style="background:#0d0d1a;">
+        <img src="Na_F.gif" alt="Sodium ion animation" style="max-height:220px; object-fit:contain;" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-coral">Animation · Neurophysiology</span>
+        <div class="card-title">Sodium Ion (Na⁺) — Animated</div>
+        <div class="card-desc">Animated depiction of a sodium ion, a key player in action potential propagation and neural signaling. Part of a broader series of neurophysiology illustrations.</div>
+      </div>
+    </div>
+
+  </div><!-- /portfolio-grid -->
+</section>
+
+<!-- ── PUBLICATIONS ────────────────────────────────── -->
+<section id="publications">
+  <div class="section-label">Research</div>
+  <h2 class="section-title">Publications</h2>
+  <p class="section-sub">
+    Seven peer-reviewed papers spanning behavioral pharmacology, molecular neuroscience, and neuroanatomy.
+  </p>
+  <div class="pub-list">
+
+    <div class="pub-card first-author">
+      <div class="pub-year">2025 <span class="first-author-badge">First Author</span></div>
+      <div class="pub-title">Endogenous RGS14 blunts cocaine-induced emotionally motivated behaviors in female mice</div>
+      <div class="pub-authors"><strong>Bramlett, S. N.</strong>, Foster, S. L., Weinshenker, D., &amp; Hepler, J. R.</div>
+      <div class="pub-journal">Addiction Neuroscience, 15, 100203</div>
+    </div>
+
+    <div class="pub-card first-author">
+      <div class="pub-year">2024 <span class="first-author-badge">First Author</span></div>
+      <div class="pub-title">RGS14 protein expression profile in the adult mouse brain</div>
+      <div class="pub-authors"><strong>Bramlett, S. N.</strong>, Fitzmaurice, S. M., Harbin, N. H., Yan, W., Bandlamudi, C., Van Doorn, G. E., Smith, Y., &amp; Hepler, J. R.</div>
+      <div class="pub-journal">European Journal of Neuroscience · DOI: 10.1111/ejn.16592</div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-year">2023</div>
+      <div class="pub-title">RGS14 expression in CA2 hippocampus, amygdala, and basal ganglia: implications for human brain physiology and disease</div>
+      <div class="pub-authors">Montanez-Miranda, C., <strong>Bramlett, S. N.</strong>, &amp; Hepler, J. R.</div>
+      <div class="pub-journal">Hippocampus · DOI: 10.1002/hipo.23492</div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-year">2021</div>
+      <div class="pub-title">RGS14 modulates locomotor behavior and ERK signaling induced by environmental novelty and cocaine within discrete limbic structures</div>
+      <div class="pub-authors">Foster, S. L., Lustberg, D. J., Harbin, N. H., <strong>Bramlett, S. N.</strong>, Hepler, J. R., &amp; Weinshenker, D.</div>
+      <div class="pub-journal">Psychopharmacology, 238(10), 2755–2773</div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-year">2021</div>
+      <div class="pub-title">RGS14 regulation of post-synaptic signaling and spine plasticity in brain</div>
+      <div class="pub-authors">Harbin, N. H., <strong>Bramlett, S. N.</strong>, Montanez-Miranda, C., Terzioglu, G., &amp; Hepler, J. R.</div>
+      <div class="pub-journal">International Journal of Molecular Sciences, 22(13), 6823</div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-year">2019</div>
+      <div class="pub-title">Effects of early life stress on cocaine self-administration in post-pubertal male and female rhesus macaques</div>
+      <div class="pub-authors">Wakeford, A. G. P., Morin, E. L., <strong>Bramlett, S. N.</strong>, Howell, B. R., McCormack, K. M., Meyer, J. S., Nader, M. A., Sanchez, M. M., &amp; Howell, L. L.</div>
+      <div class="pub-journal">Psychopharmacology, 236, 2785–2796</div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-year">2018</div>
+      <div class="pub-title">A review of nonhuman primate models of early life stress and adolescent drug abuse</div>
+      <div class="pub-authors">Wakeford, A. G. P., Morin, E. L., <strong>Bramlett, S. N.</strong>, Howell, L. L., &amp; Sanchez, M. M.</div>
+      <div class="pub-journal">Neurobiology of Stress, 9, 188–198</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CONTACT ──────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <h2 class="section-title">Let's Work Together</h2>
+  <p class="section-sub">
+    Available for freelance scientific illustration and science communication.
+    Also happy to connect about research or just say hello.
+  </p>
+  <div class="contact-links">
+    <a href="mailto:sara.n.bramlett@gmail.com" class="contact-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+      Email
+    </a>
+    <a href="https://www.linkedin.com/in/sara-bramlett-38028b146/" target="_blank" class="contact-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
+      LinkedIn
+    </a>
+    <a href="https://www.etsy.com/shop/sciopsdesign" target="_blank" class="contact-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+      </svg>
+      Etsy Shop
+    </a>
+    <a href="https://www.instagram.com/sciopsdesign/" target="_blank" class="contact-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+      </svg>
+      Instagram
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────── -->
+<footer>
+  <span>© 2025 Sara N. Bramlett, Ph.D. — SciOpsDesign</span>
+  <span>
+    <a href="https://www.etsy.com/shop/sciopsdesign" target="_blank">Etsy</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.instagram.com/sciopsdesign/" target="_blank">Instagram</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/sara-bramlett-38028b146/" target="_blank">LinkedIn</a>
+  </span>
+</footer>
 
 </body>
 </html>
