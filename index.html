@@ -161,6 +161,33 @@
       z-index: 1001;
     }
 
+    /* ── YouTube video card ───────────────────────────── */
+    .video-card { cursor: pointer; }
+    .yt-thumb-wrap {
+      position: relative; width: 100%; height: 100%;
+    }
+    .yt-thumb-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; padding: 0;
+    }
+    .yt-play-btn {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px; height: 64px;
+      background: rgba(255,0,0,0.85);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      pointer-events: none;
+    }
+    .video-card:hover .yt-play-btn {
+      background: #ff0000;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    .yt-play-btn svg { width: 26px; height: 26px; fill: #fff; margin-left: 4px; }
+    .yt-embed-wrap { width: 100%; height: 100%; }
+    .yt-embed-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
     /* ── Section shared ───────────────────────────────── */
     section { padding: 90px 5%; }
     .section-label {
@@ -893,6 +920,23 @@
       </div>
     </div>
 
+    <div class="portfolio-card video-card" id="yt-tissue-invaders">
+      <div class="card-img medium" style="background:#000;" id="yt-ti-container">
+        <div class="yt-thumb-wrap" id="yt-ti-thumb">
+          <img class="video-thumb" src="TissueInvaders_Thumbnail.png"
+               alt="Tissue Invaders pixel art animation thumbnail" />
+          <div class="yt-play-btn">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag tag-coral">Animation · Science Communication</span>
+        <div class="card-title">Tissue Invaders</div>
+        <div class="card-desc">A short pixel art animation where immune cells battle it out in a retro arcade-style world. Original concept, design, and animation.</div>
+      </div>
+    </div>
+
   </div><!-- /portfolio-grid -->
 </section>
 
@@ -1036,7 +1080,7 @@
     }
 
     // Open
-    document.querySelectorAll('.card-img img').forEach(function (img) {
+    document.querySelectorAll('.card-img img:not(.video-thumb)').forEach(function (img) {
       img.addEventListener('click', function () {
         lbImg.src = img.src;
         lbImg.alt = img.alt;
@@ -1127,6 +1171,27 @@
         applyTransform();
       }
     }, { passive: false });
+  })();
+
+  // ── YouTube click-to-embed ─────────────────────────
+  (function () {
+    var card      = document.getElementById('yt-tissue-invaders');
+    var container = document.getElementById('yt-ti-container');
+    var thumb     = document.getElementById('yt-ti-thumb');
+
+    if (!card || !container || !thumb) return;
+
+    card.addEventListener('click', function () {
+      var wrap = document.createElement('div');
+      wrap.className = 'yt-embed-wrap';
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/cfbFqqu5xwc?autoplay=1';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+      iframe.allowFullscreen = true;
+      wrap.appendChild(iframe);
+      container.replaceChild(wrap, thumb);
+      card.style.cursor = 'default';
+    });
   })();
 </script>
 
